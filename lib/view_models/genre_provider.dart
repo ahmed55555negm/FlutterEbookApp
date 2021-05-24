@@ -20,6 +20,7 @@ class GenreProvider extends ChangeNotifier {
 
   listener(url) {
     controller.addListener(() {
+      //TODO:what this condition meaning
       if (controller.position.pixels == controller.position.maxScrollExtent) {
         if (!loadingMore) {
           paginate(url);

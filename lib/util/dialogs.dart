@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_ebook_app/components/custom_alert.dart';
 import 'package:flutter_ebook_app/util/consts.dart';
@@ -34,8 +33,24 @@ class Dialogs {
               ),
               SizedBox(height: 40.0),
               Row(
+                //trayer 4 ...i reverse theme of tow button with eatch other
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
+                  Container(
+                    height: 40.0,
+                    width: 130.0,
+                    child: RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                      ),
+                      child: Text('No',
+                          style: TextStyle(
+                            color: Colors.white,
+                          )),
+                      onPressed: () => Navigator.pop(context),
+                      color: Theme.of(context).accentColor,
+                    ),
+                  ),
                   Container(
                     height: 40.0,
                     width: 130.0,
@@ -46,30 +61,13 @@ class Dialogs {
                       borderSide:
                           BorderSide(color: Theme.of(context).accentColor),
                       child: Text(
-                        'No',
+                        'Yes',
                         style: TextStyle(
                           color: Theme.of(context).accentColor,
                         ),
                       ),
-                      onPressed: () => Navigator.pop(context),
-                      color: Colors.white,
-                    ),
-                  ),
-                  Container(
-                    height: 40.0,
-                    width: 130.0,
-                    child: RaisedButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                      child: Text(
-                        'Yes',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
                       onPressed: () => exit(0),
-                      color: Theme.of(context).accentColor,
+                      color: Colors.white,
                     ),
                   ),
                 ],

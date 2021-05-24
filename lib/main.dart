@@ -33,7 +33,8 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           key: appProvider.key,
           debugShowCheckedModeBanner: false,
-          navigatorKey: appProvider.navigatorKey,
+          navigatorKey:
+              appProvider.navigatorKey, //TODO:will helpUS in navigator
           title: Constants.appName,
           theme: themeData(appProvider.theme),
           darkTheme: themeData(ThemeConfig.darkTheme),

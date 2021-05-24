@@ -32,11 +32,13 @@ class HomeProvider with ChangeNotifier {
     }
   }
 
+  /// upodate apiRequestStatus variable
   void setApiRequestStatus(APIRequestStatus value) {
     apiRequestStatus = value;
     notifyListeners();
   }
 
+  /// update top by value
   void setTop(value) {
     top = value;
     notifyListeners();
@@ -45,7 +47,7 @@ class HomeProvider with ChangeNotifier {
   CategoryFeed getTop() {
     return top;
   }
-
+/// update recent
   void setRecent(value) {
     recent = value;
     notifyListeners();

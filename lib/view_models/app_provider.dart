@@ -9,8 +9,10 @@ class AppProvider extends ChangeNotifier {
   }
 
   ThemeData theme = ThemeConfig.lightTheme;
-  Key key = UniqueKey();
-  GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  Key key =
+      UniqueKey(); //TODO:why we dont initialise this key in material directory
+  GlobalKey<NavigatorState> navigatorKey = GlobalKey<
+      NavigatorState>(); //TODO:why we dont initialise this navigatorKey in material directory
 
   void setKey(value) {
     key = value;
@@ -30,10 +32,12 @@ class AppProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// what this func do
   ThemeData getTheme(value) {
     return theme;
   }
 
+  /// this function return theme whether light or dark
   Future<ThemeData> checkTheme() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     ThemeData t;

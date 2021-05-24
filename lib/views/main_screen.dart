@@ -11,12 +11,14 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  PageController _pageController;
+  PageController
+      _pageController; //TODO:WHAT THE DIFFERNT BETWEEN THIS _pAGE CONTROLLER AND PageController _pageController=PageController();
   int _page = 0;
 
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
+      //isnt it better if he take object from Dialogs Or because we are use it only one time he did this
       onWillPop: () => Dialogs().showExitDialog(context),
       child: Scaffold(
         body: PageView(
@@ -40,25 +42,19 @@ class _MainScreenState extends State<MainScreen> {
               icon: Icon(
                 Feather.home,
               ),
-              title: Text(
-                'Home',
-              ),
+              label: 'Home',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Feather.compass,
               ),
-              title: Text(
-                'Explore',
-              ),
+              label: 'Explore',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Feather.settings,
               ),
-              title: Text(
-                'Settings',
-              ),
+              label: 'Settings',
             ),
           ],
           onTap: navigationTapped,

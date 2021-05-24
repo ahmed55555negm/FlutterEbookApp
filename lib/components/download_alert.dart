@@ -30,8 +30,9 @@ class _DownloadAlertState extends State<DownloadAlert> {
           received = receivedBytes;
           total = totalBytes;
           progress = (received / total * 100).toStringAsFixed(0);
-        });
 
+          ///TODO: WHAT THIS MEANING..toStringAsFixed(0)
+        });
         //Check if download is complete and close the alert dialog
         if (receivedBytes == totalBytes) {
           Navigator.pop(context, '${Constants.formatBytes(total, 1)}');
@@ -49,7 +50,7 @@ class _DownloadAlertState extends State<DownloadAlert> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () => Future.value(false),
+      onWillPop: () => Future.value(false), //TODO:WHAT THIS MEANIN
       child: CustomAlert(
         child: Padding(
           padding: EdgeInsets.all(20.0),

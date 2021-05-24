@@ -15,7 +15,7 @@ class DownloadsDB {
     final db = ObjectDB(await getPath());
     db.open();
     db.insert(item);
-    db.tidy();
+    db.tidy(); //تقريبا تعني مرتبة
     await db.close();
   }
 

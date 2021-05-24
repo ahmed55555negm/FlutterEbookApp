@@ -2,7 +2,8 @@ import 'dart:math';
 
 class Constants {
   //App related strings
-  static String appName = 'Flutter Ebook App';
+  static String appName =
+      'Flutter Ebook App'; //why we dont intialise this app name in material app directory..because we use it in exitDialog
 
   static formatBytes(bytes, decimals) {
     if (bytes == 0) return 0.0;

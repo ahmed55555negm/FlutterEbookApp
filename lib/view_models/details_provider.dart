@@ -49,13 +49,13 @@ class DetailsProvider extends ChangeNotifier {
 
   addFav() async {
     await favDB.add({'id': entry.id.t.toString(), 'item': entry.toJson()});
-    checkFav();
+    checkFav(); //TODO:why check favorite here if i found item in favorite iwill add too!!!!!!!!
   }
 
   removeFav() async {
     favDB.remove({'id': entry.id.t.toString()}).then((v) {
       print(v);
-      checkFav();
+      checkFav(); //why???
     });
   }
 
@@ -66,9 +66,9 @@ class DetailsProvider extends ChangeNotifier {
       // check if book has been deleted
       String path = downloads[0]['path'];
       print(path);
-      if(await File(path).exists()){
+      if (await File(path).exists()) {
         setDownloaded(true);
-      }else{
+      } else {
         setDownloaded(false);
       }
     } else {
@@ -82,9 +82,11 @@ class DetailsProvider extends ChangeNotifier {
   }
 
   addDownload(Map body) async {
-    await dlDB.removeAllWithId({'id': entry.id.t.toString()});
-    await dlDB.add(body);
-    checkDownload();
+    await dlDB.removeAllWithId({'id': entry.id.t.toString()}); //TODO:why
+    await dlDB.add(
+        body); //here we dont download him but add to local database????..download in another function
+    //but use this after downloaded
+    checkDownload(); //why
   }
 
   removeDownload() async {
@@ -127,7 +129,7 @@ class DetailsProvider extends ChangeNotifier {
       await file.delete();
       await file.create();
     }
-
+//this function make download boock
     showDialog(
       barrierDismissible: false,
       context: context,
@@ -139,11 +141,12 @@ class DetailsProvider extends ChangeNotifier {
       // When the download finishes, we then add the book
       // to our local database
       if (v != null) {
+        //v meaning size almost
         addDownload(
           {
             'id': entry.id.t.toString(),
             'path': path,
-            'image': '${entry.link[1].href}',
+            'image': '${entry.link[1].href}', //TODO:what should this meaning
             'size': v,
             'name': entry.title.t,
           },
@@ -163,6 +166,7 @@ class DetailsProvider extends ChangeNotifier {
   }
 
   CategoryFeed getRelated() {
+    //this function return related without any update or editing
     return related;
   }
 

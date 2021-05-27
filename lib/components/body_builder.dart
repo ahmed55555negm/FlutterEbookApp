@@ -23,13 +23,13 @@ class BodyBuilder extends StatelessWidget {
   Widget _buildBody() {
     switch (apiRequestStatus) {
       case APIRequestStatus.loading:
-        return LoadingWidget();
+        return LoadingWidget();//case1
         break;
       case APIRequestStatus.unInitialized:
         return LoadingWidget();
         break;
       case APIRequestStatus.connectionError:
-        return MyErrorWidget(
+        return MyErrorWidget(//case2
           refreshCallBack: reload,
           isConnection: true,
         );

@@ -15,7 +15,7 @@ class MyErrorWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Text(
-            '😔',
+            '😔', //TODO:how he make emojy
             style: TextStyle(
               fontSize: 60.0,
             ),

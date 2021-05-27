@@ -17,11 +17,11 @@ class BookCard extends StatelessWidget {
     @required this.entry,
   }) : super(key: key);
 
-  static final uuid = Uuid();
+  static final uuid =
+      Uuid(); //TODO: what this uuid meaning?=meaning some thing like unique id ..but why he need it?
   final String imgTag = uuid.v4();
   final String titleTag = uuid.v4();
   final String authorTag = uuid.v4();
-
   @override
   Widget build(BuildContext context) {
     return Container(

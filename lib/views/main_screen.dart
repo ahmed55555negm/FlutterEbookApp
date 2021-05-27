@@ -12,7 +12,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   PageController
-      _pageController; //TODO:WHAT THE DIFFERNT BETWEEN THIS _pAGE CONTROLLER AND PageController _pageController=PageController();
+      _pageController; //TODO:WHAT THE DIFFERNT BETWEEN THIS _PAGE CONTROLLER AND PageController _pageController=PageController();
   int _page = 0;
 
   @override
@@ -24,7 +24,8 @@ class _MainScreenState extends State<MainScreen> {
         body: PageView(
           physics: NeverScrollableScrollPhysics(),
           controller: _pageController,
-          onPageChanged: onPageChanged,
+          onPageChanged:
+              onPageChanged, //TODO:this function take int how he use it without passing page?
           children: <Widget>[
             Home(),
             Explore(),
@@ -57,7 +58,8 @@ class _MainScreenState extends State<MainScreen> {
               label: 'Settings',
             ),
           ],
-          onTap: navigationTapped,
+          onTap:
+              navigationTapped, //TODO:this function take int how he use it without passing page?
           currentIndex: _page,
         ),
       ),
@@ -72,6 +74,7 @@ class _MainScreenState extends State<MainScreen> {
   void initState() {
     super.initState();
     _pageController = PageController(initialPage: 0);
+    //are this  process are best practice this process meaning intialise pageController here
   }
 
   @override
@@ -82,7 +85,7 @@ class _MainScreenState extends State<MainScreen> {
 
   void onPageChanged(int page) {
     setState(() {
-      this._page = page;
+      this._page = page; //TODO:why use (this) here
     });
   }
 }

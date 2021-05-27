@@ -20,6 +20,7 @@ class LoadingWidget extends StatelessWidget {
       );
     } else {
       return SpinKitWave(
+        //what this else meaning and what is SpinKitWave
         color: Theme.of(context).accentColor,
       );
     }

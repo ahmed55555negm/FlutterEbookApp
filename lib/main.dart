@@ -49,6 +49,7 @@ class MyApp extends StatelessWidget {
     return theme.copyWith(
       textTheme: GoogleFonts.sourceSansProTextTheme(
         theme.textTheme,
+        // TODO:why he use google fonts and add fonts also to assets
       ),
     );
   }

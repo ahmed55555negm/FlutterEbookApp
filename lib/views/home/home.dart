@@ -16,6 +16,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
+  //TODO: what this meaning =AutomaticKeepAliveClientMixin
   @override
   void initState() {
     super.initState();
@@ -26,7 +27,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
 
   @override
   Widget build(BuildContext context) {
-    super.build(context);
+    super.build(context); //TODO:what is this line meaning
     return Consumer<HomeProvider>(
       builder: (BuildContext context, HomeProvider homeProvider, Widget child) {
         return Scaffold(
@@ -95,13 +96,15 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
       height: 200.0,
       child: Center(
         child: ListView.builder(
-          primary: false,
+          primary: false, //TODO:what is primary
           padding: EdgeInsets.symmetric(horizontal: 15.0),
           scrollDirection: Axis.horizontal,
-          itemCount: homeProvider?.top?.feed?.entry?.length ?? 0,
-          shrinkWrap: true,
+          itemCount: homeProvider?.top?.feed?.entry?.length ??
+              0, //TODO: what this line meaning?
+          shrinkWrap: true, //TODO: what this line meaning?..dive search
           itemBuilder: (BuildContext context, int index) {
-            Entry entry = homeProvider.top.feed.entry[index];
+            Entry entry = homeProvider
+                .top.feed.entry[index]; //TODO: what this line meaning?
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 10.0),
               child: BookCard(
@@ -201,5 +204,5 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
   }
 
   @override
-  bool get wantKeepAlive => true;
+  bool get wantKeepAlive => true; //TODO:what this line do
 }

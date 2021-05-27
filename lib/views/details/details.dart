@@ -15,6 +15,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 
 class Details extends StatefulWidget {
+  //TODO: why he intialize him here not in blow class?
   final Entry entry;
   final String imgTag;
   final String titleTag;
@@ -120,7 +121,7 @@ class _DetailsState extends State<Details> {
               placeholder: (context, url) => Container(
                 height: 200.0,
                 width: 130.0,
-                child: LoadingWidget(),
+                child: LoadingWidget(), //TODO:why he use loading widget here?
               ),
               errorWidget: (context, url, error) => Icon(Feather.x),
               fit: BoxFit.cover,
@@ -139,6 +140,7 @@ class _DetailsState extends State<Details> {
                 Hero(
                   tag: widget.titleTag,
                   child: Material(
+                    //TODO:why he use material?
                     type: MaterialType.transparency,
                     child: Text(
                       '${widget.entry.title.t.replaceAll(r'\', '')}',

@@ -18,7 +18,6 @@ class _DescriptionTextWidgetState extends State<DescriptionTextWidget> {
   @override
   void initState() {
     super.initState();
-
     if (widget.text.length > 300) {
       firstHalf = widget.text.substring(0, 300);
       secondHalf = widget.text.substring(300, widget.text.length);
@@ -33,6 +32,8 @@ class _DescriptionTextWidgetState extends State<DescriptionTextWidget> {
     return Container(
       child: secondHalf.isEmpty
           ? Text(
+              //ليه هنا معرضتش الجزء الاول ع طول من غير ماافحص الفلاج؟وايه لازمة الفلاج اصلا
+              //if flag false we show (firstHalf + secondHalf) togeather...
               '${flag ? (firstHalf) : (firstHalf + secondHalf)}'
                   .replaceAll(r'\n', '\n')
                   .replaceAll(r'\r', '')

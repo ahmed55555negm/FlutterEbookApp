@@ -91,7 +91,7 @@ class BookListItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Hero(
-                    tag: titleTag,
+                    tag: titleTag, //TODO:why he use hero with text???
                     child: Material(
                       type: MaterialType.transparency,
                       child: Text(
@@ -106,9 +106,7 @@ class BookListItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 5,
-                  ),
+                  SizedBox(height: 5),
                   Hero(
                     tag: authorTag,
                     child: Material(
